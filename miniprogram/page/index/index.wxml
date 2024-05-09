@@ -1,0 +1,15 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="index">
+    <view class="index-hd">
+      <image class="index-logo" src="../../image/logo.png"></image>
+      <view class="index-desc">“翠林”代表郁郁葱葱的大自然，“识语”则意味着理解植物的“语言”，旨在为用户提供一个既实用又充满艺术气息的植物识别应用</view>
+    </view>
+    <view class="index-bd">
+      <button type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}" bindtap="takePhoto">寻知</button>
+    </view>
+    <view class="index-bd">
+      <image mode="widthFix" src="{{image_url}}"></image>
+      <view class="index-desc">{{description}}</view>
+    </view>
+  </view>
+</view>

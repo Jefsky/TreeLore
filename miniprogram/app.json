@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "page/index/index",
+    "page/yiyu/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "@navigationBarTextStyle",
+    "navigationBarTitleText": "翠林识语",
+    "navigationBarBackgroundColor": "@navigationBarBackgroundColor",
+    "backgroundColor": "@backgroundColor"
+  },
+  "tabBar": {
+    "color": "@tabBarColor",
+    "selectedColor": "@tabBarSelectedColor",
+    "borderStyle": "@tabBarBorderStyle",
+    "backgroundColor": "@tabBarBackgroundColor",
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "iconPath": "@iconPathComponent",
+        "selectedIconPath": "@selectedIconPathComponent",
+        "text": "寻知"
+      },
+      {
+        "pagePath": "page/yiyu/index",
+        "iconPath": "@iconPathComponent",
+        "selectedIconPath": "@selectedIconPathComponent",
+        "text": "一语"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "demo.theme.json",
+  "darkmode": true,
+  "resizable": true,
+  "useExtendedLib": {
+    "weui": true
+  },
+  "frameset": true,
+  "requiredBackgroundModes": ["audio", "location"],
+  "embeddedAppIdList": ["wxfdcee92a299bcaf1"],
+  "lazyCodeLoading": "requiredComponents"
+}
