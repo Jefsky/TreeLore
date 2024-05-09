@@ -3,7 +3,8 @@
 
 > 提示：请使用微信开发者工具或微信客户端 6.7.2 及以上版本运行。
 
-<img width="200" src="https://git.weixin.qq.com/jefsky/TreeLore/raw/c376d3e6666a1af44bcaad6ca3df0095a03352ba/gh_TreeLore_258.jpg">
+<img width="200" src="https://github.com/Jefsky/TreeLore/blob/master/gh_TreeLore_258.jpg?raw=true">
+
 
 ## 使用
 
@@ -34,5 +35,5 @@ npm run lint
 
 ## 截图
 
-<img width="375" src="https://git.weixin.qq.com/jefsky/TreeLore/raw/c376d3e6666a1af44bcaad6ca3df0095a03352ba/xunzhi.png">
-<img width="375" src="https://git.weixin.qq.com/jefsky/TreeLore/raw/c376d3e6666a1af44bcaad6ca3df0095a03352ba/yiyu.png">
+<img width="375" src="https://github.com/Jefsky/TreeLore/blob/master/xunzhi.png?raw=true">
+<img width="375" src="https://github.com/Jefsky/TreeLore/blob/master/yiyu.png?raw=true">
