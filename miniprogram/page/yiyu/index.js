@@ -28,7 +28,6 @@ Page({
     self.setData({
       loading: true
     })
-
     wx.request({
       url: requestUrl,
       data: {
@@ -36,12 +35,12 @@ Page({
         noncestr: Date.now()
       },
       success(result) {
-        wx.showToast({
-          title: '请求成功',
-          icon: 'success',
-          mask: true,
-          duration,
-        })
+        // wx.showToast({
+        //   title: '请求成功',
+        //   icon: 'success',
+        //   mask: true,
+        //   duration,
+        // })
         self.setData({
           loading: false,
           desc:result.data.hitokoto,
@@ -52,6 +51,12 @@ Page({
       },
 
       fail({errMsg}) {
+        wx.showToast({
+          title: '出小插曲了T。T',
+          icon: 'error',
+          mask: true,
+          duration:1000,
+        })
         console.log('request fail', errMsg)
         self.setData({
           loading: false

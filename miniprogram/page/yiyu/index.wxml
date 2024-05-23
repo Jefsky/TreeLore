@@ -2,15 +2,15 @@
   <view class="index">
     <view class="index-hd">
       <image class="index-logo" src="../../image/logo.png"></image>
-      <view class="index-desc">{{desc}}</view>
-      <view class="index-desc">{{from}}</view>
-      <view class="index-desc">{{from_who}}</view>
+      <view class="index-desc">不管是动漫也好、小说也好、网络也好，不论在哪里，在按钮那头，总会有那么一两个句子能穿透你的心。</view>
     </view>
     <view class="btn-area">
       <button bindtap="makeRequest" type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}">穿透吧</button>
     </view>
     <view class="index-hd">
-      <view class="index-desc">不管是动漫也好、小说也好、网络也好，不论在哪里，在按钮那头，总会有那么一两个句子能穿透你的心。</view>
+      <view class="index-desc">{{desc}}</view>
+      <view class="index-desc">{{from}}</view>
+      <view class="index-desc">{{from_who}}</view>
     </view>
   </view>
 </view>

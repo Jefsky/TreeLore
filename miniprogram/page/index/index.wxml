@@ -2,14 +2,42 @@
   <view class="index">
     <view class="index-hd">
       <image class="index-logo" src="../../image/logo.png"></image>
-      <view class="index-desc">“翠林”代表郁郁葱葱的大自然，“识语”则意味着理解植物的“语言”，旨在为用户提供一个既实用又充满艺术气息的植物识别应用</view>
+      <view class="index-desc">“翠林”代表郁郁葱葱的大自然，“识语”则意味着理解大自然的“语言”，旨在为用户提供一个既实用又充满艺术气息的认知应用</view>
     </view>
     <view class="index-bd">
-      <button type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}" bindtap="takePhoto">寻知</button>
+      <button type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}" data-ask_parm="plant" bindtap="takePhoto">寻 <span style="font-size: small;">植物</span></button>
+      <button type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}" data-ask_parm="animal" bindtap="takePhoto">问 <span style="font-size: small;">动物</span></button>
+      <button type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}" data-ask_parm="ingredient" bindtap="takePhoto">查 <span style="font-size: small;">蔬果</span></button>
+      <button type="primary" disabled="{{buttonDisabled}}" loading="{{loading}}" data-ask_parm="dish" bindtap="takePhoto">知 <span style="font-size: small;">菜品</span></button>
     </view>
-    <view class="index-bd">
-      <image mode="widthFix" src="{{image_url}}"></image>
-      <view class="index-desc">{{description}}</view>
-    </view>
+    
   </view>
 </view>
+<page-container 
+  show="{{show}}"
+  round="{{round}}"
+  overlay="{{overlay}}"
+  duration="{{duration}}"
+  position="{{position}}"
+  close-on-slide-down="{{false}}"
+  bindbeforeenter="onBeforeEnter"
+  bindenter="onEnter"
+  bindafterenter="onAfterEnter"
+  bindbeforeleave="onBeforeLeave"
+  bindleave="onLeave"
+  bindafterleave="onAfterLeave"
+  bindclickoverlay="onClickOverlay"
+  custom-style="{{customStyle}}"
+  overlay-style="{{overlayStyle}}"
+>
+  <view class="index-bd">
+    <button type="primary" bindtap="exit">返回</button>
+  </view>
+  <view class="index-bd">
+    <scroll-view scroll-y enable-flex style="height:400px;" class="index-desc">
+      <view class="index-desc">{{name}}</view>
+      <image mode="widthFix" src="{{image_url}}"></image>
+      <view class="index-desc">{{description}}</view>
+    </scroll-view>
+  </view>
+</page-container>

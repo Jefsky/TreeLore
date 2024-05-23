@@ -24,10 +24,32 @@ Page({
     name2:'',
     name3:'',
     theme: 'light',
+    show: false,
+    ask_parm:'',
   },
 
-  takePhoto() {
+  popup() {
+    const position = 'bottom'
+    let duration = 300
+    let customStyle = 'height: 100%;'
+    this.setData({
+      position,
+      show: true,
+      customStyle,
+      duration
+    })
+  },
+
+  exit() {
+    this.setData({show: false,name:'',
+      image_url:'',
+      description:'',})
+    // wx.navigateBack()
+  },
+
+  takePhoto(e) {
     const self = this;
+    self.data.ask_parm = e.currentTarget.dataset.ask_parm
     wx.chooseMedia({
       count: 9,
       mediaType: ['image', 'video'],
@@ -82,8 +104,24 @@ Page({
   },
 
   async getImgIdentify(token, data) {
+    const self = this;
+    let v = '';
+    switch(self.data.ask_parm) {
+      case 'plant':
+      case 'animal': 
+        v = 1
+        break
+      case 'ingredient':
+        v = 1
+        self.data.ask_parm = 'classify/ingredient'
+        break
+      case 'dish':
+        v = 2
+        break
+    }
     return new Promise((resolve, reject) => {
-      const detectUrl = `https://aip.baidubce.com/rest/2.0/image-classify/v1/plant?access_token=${token}`;
+      const detectUrl = `https://aip.baidubce.com/rest/2.0/image-classify/v${v}/${self.data.ask_parm}?access_token=${token}`;
+      wx.showLoading()
       wx.request({
         url: detectUrl,
         method: 'POST',
@@ -97,15 +135,17 @@ Page({
         },
         success: function (res) {
           resolve(res);
+          wx.hideLoading()//隐藏loading
         },
         fail: function (res) {
           wx.hideLoading();
           wx.showToast({
-            title: '网络错误，请重试！',
-            icon: 'none',
+            title: '出小插曲了T。T',
+            icon: 'error',
             duration: 2000
           })
           reject(res);
+          wx.hideLoading()//隐藏loading
         },
         complete: function (res) {
           resolve(res);
@@ -126,12 +166,16 @@ Page({
     let base64Data = await this.getFileContentAsBase64(self.data.src);
     let identifyResponse = await this.getImgIdentify(refreshedToken, base64Data);
     let plantInfo = identifyResponse.data.result;
-    let score = plantInfo.length > 0 ? plantInfo[0].score || 0 : 0;
+    // let score = plantInfo.length > 0 ? plantInfo[0].score || 0 : 0;
+    let resImg,resDes;
+    resImg = typeof plantInfo[0].baike_info?.image_url == 'undefined' ? self.data.src : plantInfo[0].baike_info.image_url;
+    resDes = typeof plantInfo[0].baike_info?.description == 'undefined' ? '' : plantInfo[0].baike_info?.description;
     if(plantInfo.length > 0){
+      self.popup()
       self.setData({
         name:plantInfo[0].name,
-        image_url:plantInfo[0].baike_info.image_url,
-        description:plantInfo[0].baike_info.description,
+        image_url:resImg,
+        description:resDes,
       })
     }else{
       wx.showToast({
