@@ -1,10 +1,9 @@
 # 翠林识语
-“翠林”代表郁郁葱葱的大自然，“识语”则意味着理解植物的“语言”，旨在为用户提供一个既实用又充满艺术气息的植物识别应用
+“翠林”代表郁郁葱葱的大自然，“识语”则意味着理解大自然的“语言”，旨在为用户提供一个既实用又充满艺术气息的认知应用
 
 > 提示：请使用微信开发者工具或微信客户端 6.7.2 及以上版本运行。
 
-<img width="200" src="https://github.com/Jefsky/TreeLore/blob/master/gh_TreeLore_258.jpg?raw=true">
-
+<img width="200" src="https://git.weixin.qq.com/jefsky/TreeLore/raw/c376d3e6666a1af44bcaad6ca3df0095a03352ba/gh_TreeLore_258.jpg">
 
 ## 使用
 
@@ -35,5 +34,5 @@ npm run lint
 
 ## 截图
 
-<img width="375" src="https://github.com/Jefsky/TreeLore/blob/master/xunzhi.png?raw=true">
-<img width="375" src="https://github.com/Jefsky/TreeLore/blob/master/yiyu.png?raw=true">
+<img width="375" src="https://git.weixin.qq.com/jefsky/TreeLore/raw/c376d3e6666a1af44bcaad6ca3df0095a03352ba/xunzhi.png">
+<img width="375" src="https://git.weixin.qq.com/jefsky/TreeLore/raw/c376d3e6666a1af44bcaad6ca3df0095a03352ba/yiyu.png">
